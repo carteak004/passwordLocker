@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0015801ED10CE90077D753 /* UandPList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D00157F1ED10CE90077D753 /* UandPList.plist */; };
+		0D0015821ED178740077D753 /* UandPList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0015811ED178740077D753 /* UandPList.swift */; };
+		0D0015841ED198D10077D753 /* mainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0015831ED198D10077D753 /* mainTableViewController.swift */; };
+		0D0015861ED198D90077D753 /* mainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0015851ED198D90077D753 /* mainTableViewCell.swift */; };
 		0D76A14A1ED1065500CF8DD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D76A1491ED1065500CF8DD1 /* AppDelegate.swift */; };
-		0D76A14C1ED1065500CF8DD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D76A14B1ED1065500CF8DD1 /* ViewController.swift */; };
 		0D76A14F1ED1065500CF8DD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D76A14D1ED1065500CF8DD1 /* Main.storyboard */; };
 		0D76A1511ED1065500CF8DD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D76A1501ED1065500CF8DD1 /* Assets.xcassets */; };
 		0D76A1541ED1065500CF8DD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D76A1521ED1065500CF8DD1 /* LaunchScreen.storyboard */; };
@@ -34,9 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D00157F1ED10CE90077D753 /* UandPList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UandPList.plist; sourceTree = "<group>"; };
+		0D0015811ED178740077D753 /* UandPList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UandPList.swift; sourceTree = "<group>"; };
+		0D0015831ED198D10077D753 /* mainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainTableViewController.swift; sourceTree = "<group>"; };
+		0D0015851ED198D90077D753 /* mainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainTableViewCell.swift; sourceTree = "<group>"; };
 		0D76A1461ED1065500CF8DD1 /* passwordLocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = passwordLocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D76A1491ED1065500CF8DD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0D76A14B1ED1065500CF8DD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0D76A14E1ED1065500CF8DD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D76A1501ED1065500CF8DD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D76A1531ED1065500CF8DD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,9 +103,12 @@
 		0D76A1481ED1065500CF8DD1 /* passwordLocker */ = {
 			isa = PBXGroup;
 			children = (
-				0D76A1491ED1065500CF8DD1 /* AppDelegate.swift */,
-				0D76A14B1ED1065500CF8DD1 /* ViewController.swift */,
 				0D76A14D1ED1065500CF8DD1 /* Main.storyboard */,
+				0D00157F1ED10CE90077D753 /* UandPList.plist */,
+				0D0015811ED178740077D753 /* UandPList.swift */,
+				0D0015851ED198D90077D753 /* mainTableViewCell.swift */,
+				0D0015831ED198D10077D753 /* mainTableViewController.swift */,
+				0D76A1491ED1065500CF8DD1 /* AppDelegate.swift */,
 				0D76A1501ED1065500CF8DD1 /* Assets.xcassets */,
 				0D76A1521ED1065500CF8DD1 /* LaunchScreen.storyboard */,
 				0D76A1551ED1065500CF8DD1 /* Info.plist */,
@@ -236,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D76A1541ED1065500CF8DD1 /* LaunchScreen.storyboard in Resources */,
+				0D0015801ED10CE90077D753 /* UandPList.plist in Resources */,
 				0D76A1511ED1065500CF8DD1 /* Assets.xcassets in Resources */,
 				0D76A14F1ED1065500CF8DD1 /* Main.storyboard in Resources */,
 			);
@@ -262,7 +272,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D76A14C1ED1065500CF8DD1 /* ViewController.swift in Sources */,
+				0D0015821ED178740077D753 /* UandPList.swift in Sources */,
+				0D0015841ED198D10077D753 /* mainTableViewController.swift in Sources */,
+				0D0015861ED198D90077D753 /* mainTableViewCell.swift in Sources */,
 				0D76A14A1ED1065500CF8DD1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,8 +429,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S224WD5FPF;
 				INFOPLIST_FILE = passwordLocker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = NIU.passwordLocker;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.cs.niu.passwordLocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -430,8 +443,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S224WD5FPF;
 				INFOPLIST_FILE = passwordLocker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = NIU.passwordLocker;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.cs.niu.passwordLocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -514,6 +528,7 @@
 				0D76A1701ED1065500CF8DD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0D76A1711ED1065500CF8DD1 /* Build configuration list for PBXNativeTarget "passwordLockerTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +537,7 @@
 				0D76A1731ED1065500CF8DD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0D76A1741ED1065500CF8DD1 /* Build configuration list for PBXNativeTarget "passwordLockerUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +546,7 @@
 				0D76A1761ED1065500CF8DD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
