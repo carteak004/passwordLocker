@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D0015801ED10CE90077D753 /* UandPList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D00157F1ED10CE90077D753 /* UandPList.plist */; };
 		0D0015821ED178740077D753 /* UandPList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0015811ED178740077D753 /* UandPList.swift */; };
 		0D0015841ED198D10077D753 /* mainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0015831ED198D10077D753 /* mainTableViewController.swift */; };
 		0D0015861ED198D90077D753 /* mainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0015851ED198D90077D753 /* mainTableViewCell.swift */; };
@@ -37,7 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D00157F1ED10CE90077D753 /* UandPList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UandPList.plist; sourceTree = "<group>"; };
 		0D0015811ED178740077D753 /* UandPList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UandPList.swift; sourceTree = "<group>"; };
 		0D0015831ED198D10077D753 /* mainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainTableViewController.swift; sourceTree = "<group>"; };
 		0D0015851ED198D90077D753 /* mainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainTableViewCell.swift; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				0D76A14D1ED1065500CF8DD1 /* Main.storyboard */,
-				0D00157F1ED10CE90077D753 /* UandPList.plist */,
 				0D0015811ED178740077D753 /* UandPList.swift */,
 				0D0015851ED198D90077D753 /* mainTableViewCell.swift */,
 				0D0015831ED198D10077D753 /* mainTableViewController.swift */,
@@ -245,7 +242,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D76A1541ED1065500CF8DD1 /* LaunchScreen.storyboard in Resources */,
-				0D0015801ED10CE90077D753 /* UandPList.plist in Resources */,
 				0D76A1511ED1065500CF8DD1 /* Assets.xcassets in Resources */,
 				0D76A14F1ED1065500CF8DD1 /* Main.storyboard in Resources */,
 			);

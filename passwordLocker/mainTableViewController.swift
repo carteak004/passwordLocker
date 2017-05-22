@@ -6,6 +6,14 @@
 //  Copyright © 2017 Northern Illinois University. All rights reserved.
 //
 
+/****************************************************************
+ COMMIT HISTORY:
+ commit 1: initial commit
+ commit 2: main view that shows username, password and website from a plist
+ commit 3: added search functionality to this view that refines results based on the name of the website.
+ commit 4: changed the data source from plist to json and deleted plist. change in data source is done to fetch live data that can be updated at any point of time.
+ ****************************************************************/
+
 import UIKit
 
 class mainTableViewController: UITableViewController, UISearchBarDelegate {
@@ -22,31 +30,15 @@ class mainTableViewController: UITableViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        readPropertyList() //calling the function
+        
+        fetchJsonData() //calling the function to fetch data from json file
         
         //MARK: Search bar related
-        searchController.searchResultsUpdater = self as? UISearchResultsUpdating       //This will let the class be informed of any text changes in the search bar
+        searchController.searchResultsUpdater = self as UISearchResultsUpdating       //This will let the class be informed of any text changes in the search bar
         searchController.dimsBackgroundDuringPresentation = false   //This will not let the view controller get dim when a search is performed.
         definesPresentationContext = true   //this will make sure that the search bar will not be active in other screens
         tableView.tableHeaderView = searchController.searchBar  //This will add the search bar to table header view
         
-    }
-    
-    //This function finds the property list, read each dictionary entries in the plist array, initialize and append the object properties in the UandPList class.
-    func readPropertyList()
-    {
-        let path = Bundle.main.path(forResource: "UandPList", ofType: "plist")
-        let upListArray:NSArray = NSArray(contentsOfFile: path!)!
-        
-        for dict in upListArray
-        {
-            let username = (dict as! NSDictionary)["username"] as! String
-            let password = (dict as! NSDictionary)["password"] as! String
-            let website = (dict as! NSDictionary)["website"] as! String
-            
-            tableObject.append(UandPList(username : username, password : password, website : website))
-        }
     }
 
     //This function returns the filtered data
@@ -56,6 +48,67 @@ class mainTableViewController: UITableViewController, UISearchBarDelegate {
         }
         tableView.reloadData()
     }
+    
+    //This function submits a url request to get the json formatted data from the source as indicated in url string.
+    func fetchJsonData() {
+        
+        //fetching fox news latest articles
+        let api_url = URL(string: "http://students.cs.niu.edu/~z1788719/jsondata.json")
+        
+        //create a URL request with the API address
+        let urlRequest = URLRequest(url: api_url!)
+        
+        //submit a request to the Json data
+        let task = URLSession.shared.dataTask(with: urlRequest) {
+            (data,response,error) in
+            //if there is an error, print it and do not continue
+            if error != nil {
+                print(error!)
+                return
+            }//end if
+            
+            //if there is no error, fetch json formatted content
+            if let content = data {
+                do {
+                    let jsonObject = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
+                    
+                    //Fetch only the articles
+                    if let articlesJson = jsonObject["uandpdata"] as? [[String:AnyObject]] {
+                        for item in articlesJson {
+                            if let username = item["username"] as? String,
+                                let password = item["password"] as? String,
+                                let website = item["website"] as? String {
+                                /*
+                                print("*****MARK: BEGIN*****")
+                                print(username, password, website)
+                                print("*****MARK: END*****")
+                                */
+                                self.tableObject.append(UandPList(username : username, password : password, website : website))
+                                
+                            }//end if
+                            
+                        }//end for loop
+                        
+                    }//end if
+                    
+                    //if you are using a table view, you would reload the data
+                    self.tableView.reloadData()
+                    
+                }//end do
+                    
+                catch {
+                    
+                    print(error)
+                    
+                }//end catch
+                
+            }//end if
+            
+        }//end getdatasession
+        
+        task.resume()
+        
+    }//end function
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
