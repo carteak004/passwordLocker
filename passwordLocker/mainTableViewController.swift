@@ -12,6 +12,7 @@
  commit 2: main view that shows username, password and website from a plist
  commit 3: added search functionality to this view that refines results based on the name of the website.
  commit 4: changed the data source from plist to json and deleted plist. change in data source is done to fetch live data that can be updated at any point of time.
+ commit 5: changed the url for fetching json data, added sno in articles fetch block.
  ****************************************************************/
 
 import UIKit
@@ -53,7 +54,8 @@ class mainTableViewController: UITableViewController, UISearchBarDelegate {
     func fetchJsonData() {
         
         //fetching fox news latest articles
-        let api_url = URL(string: "http://students.cs.niu.edu/~z1788719/jsondata.json")
+        //let api_url = URL(string: "http://students.cs.niu.edu/~z1788719/jsondata.json")
+        let api_url = URL(string: "http://students.cs.niu.edu/~z1788719/userpass/userpassrequest.php")
         
         //create a URL request with the API address
         let urlRequest = URLRequest(url: api_url!)
@@ -71,19 +73,23 @@ class mainTableViewController: UITableViewController, UISearchBarDelegate {
             if let content = data {
                 do {
                     let jsonObject = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
-                    
+        
                     //Fetch only the articles
-                    if let articlesJson = jsonObject["uandpdata"] as? [[String:AnyObject]] {
+                    if let articlesJson = jsonObject["result"] as? [[String:AnyObject]] {
+                        
                         for item in articlesJson {
+                            
                             if let username = item["username"] as? String,
                                 let password = item["password"] as? String,
-                                let website = item["website"] as? String {
+                                let website = item["website"] as? String,
+                                let sno = item["sno"] as? String
+                            {
                                 /*
                                 print("*****MARK: BEGIN*****")
-                                print(username, password, website)
+                                print(sno, username, password, website)
                                 print("*****MARK: END*****")
                                 */
-                                self.tableObject.append(UandPList(username : username, password : password, website : website))
+                                self.tableObject.append(UandPList(sno: sno, username : username, password : password, website : website))
                                 
                             }//end if
                             
@@ -93,6 +99,7 @@ class mainTableViewController: UITableViewController, UISearchBarDelegate {
                     
                     //if you are using a table view, you would reload the data
                     self.tableView.reloadData()
+                    
                     
                 }//end do
                     
